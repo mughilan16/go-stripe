@@ -58,6 +58,11 @@
 
             stripe = Stripe("prod_O90l5z2Dna8nOE");
 
+            function hidePayButton() {
+                payButton.classList.add("d-none")
+                processing.classList.remove("d-none")
+            }
+
             function val() {
                 let form = document.getElementById("charge_form");
                 if (form.checkValidity() === false) {
@@ -67,7 +72,7 @@
                     return;
                 }
                 form.classList.add("was-validated")
-                payButton.classList.add("d-none")
+                hidePayButton()
             }
 
             (function() {
